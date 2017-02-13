@@ -1,0 +1,154 @@
+/*----------------------------------------------------------------------------*/
+/* Global Mixins
+/*----------------------------------------------------------------------------*/
+
+@mixin font-family($font-family) {
+    font-family: "#{$font-family}", sans-serif;
+}
+
+@mixin transition($what: all, $time: 0.4s, $type: ease) {
+    -webkit-transition: $what $time $type; 
+    -moz-transition: $what $time $type; 
+    -o-transition: $what $time $type; 
+    transition: $what $time $type; 
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes $animation-name {
+    @content;
+  }
+  @-moz-keyframes $animation-name {
+    @content;
+  }  
+  @-ms-keyframes $animation-name {
+    @content;
+  }
+  @-o-keyframes $animation-name {
+    @content;
+  }  
+  @keyframes $animation-name {
+    @content;
+  }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};      
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $left $top $blur $color;
+    -moz-box-shadow:inset $left $top $blur $color;
+    box-shadow:inset $left $top $blur $color;
+  } @else {
+    -webkit-box-shadow: $left $top $blur $color;
+    -moz-box-shadow: $left $top $blur $color;
+    box-shadow: $left $top $blur $color;
+  }
+}
+
+@mixin vertical-align {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  -ms-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+}
+
+/*----------------------------------------------------------------------------*/
+/* Messages
+/*----------------------------------------------------------------------------*/
+
+.messages {
+    
+    /* success */
+
+    /* error */
+}
+
+/*----------------------------------------------------------------------------*/
+/* Breadcrumbs
+/*----------------------------------------------------------------------------*/
+
+.breadcrumbs {
+    
+}
+
+/*----------------------------------------------------------------------------*/
+/* Forms, Input, Validation.
+/*----------------------------------------------------------------------------*/
+
+.main {
+
+    input {
+
+    }
+
+    .input-text {
+
+    }
+
+    select {
+
+    }
+
+    textarea {
+
+    }
+
+    label {
+
+    }
+
+    p.required {
+        
+    }
+
+    ::-webkit-input-placeholder {
+        color: #737373;
+    }
+
+    :-moz-placeholder { /* Firefox 18- */
+       color: #737373;  
+    }
+
+    ::-moz-placeholder {  /* Firefox 19+ */
+       color: #737373;  
+    }
+
+    :-ms-input-placeholder {  
+       color: #737373;  
+    }
+}
+
+/*----------------------------------------------------------------------------*/
+/* Global Styles
+/*----------------------------------------------------------------------------*/
+
+/* remove default dotted border while focusing to a link */
+a:active,
+a:focus, 
+*:focus {
+    outline: none;
+    color: inherit;
+    noFocusLine: expression(this.onFocus=this.blur());
+}

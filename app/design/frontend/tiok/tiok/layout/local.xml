@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * Description:
+ * - Initial layout update
+ */
+-->
+<layout version="0.1.0">
+	<default>
+
+		<reference name="head">
+            <block type="core/text_tag" name="responsive-viewport">
+                <action method="setTagName">
+                    <name>meta</name>
+                </action>
+                <action method="setTagParam">
+                    <param>name</param>
+                    <value>viewport</value>
+                </action>
+                <action method="setTagParam">
+                    <param>content</param>
+                    <value>width=device-width, initial-scale=1.0</value>
+                </action>
+            </block>
+            <!--
+            <block type="core/text_tag" name="google-webmaster-tools">
+                <action method="setTagName"><name>meta</name></action>
+                <action method="setTagParam"><param>name</param><value>google-site-verification</value></action>
+                <action method="setTagParam"><param>content</param><value></value></action>
+            </block>
+            <block type="core/text_tag" name="bing-webmaster-tools">
+                <action method="setTagName"><name>meta</name></action>
+                <action method="setTagParam"><param>name</param><value>msvalidate.01</value></action>
+                <action method="setTagParam"><param>content</param><value></value></action>
+            </block>
+
+            <block type="core/text" name="google-fonts">
+                <action method="setText">
+                    <text><![CDATA[<link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700"/>]]></text>
+                </action>
+            </block>
+            -->
+
+            <!-- Remove Style Sheets -->
+            <action method="removeItem">
+                <type>skin_css</type>
+                <name>css/madisonisland.css</name>
+            </action>
+            <action method="removeItem">
+                <type>skin_css</type>
+                <name>css/madisonisland-ie8.css</name>
+            </action>
+
+            <!-- Style Sheets -->
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>css/owl.carousel.css</name>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>css/owl.transitions.css</name>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <name>css/owl.theme.css</name>
+            </action>
+
+            <!-- Style Sheets IE selector limit fix. For IE9 (and lower) only. -->
+            <!-- <action method="addItem">
+                <type>skin_css</type>
+                <name>css/styles_2.css</name>
+                <params/><if><![CDATA[IE 9]]></if>
+            </action> -->
+            <!-- Style Sheets For IE8 (and lower) only. -->
+            <!-- <action method="addItem">
+                <type>skin_css</type>
+                <name>css/styles-ie8_2.css</name>
+                <params/><if><![CDATA[ (lte IE 8) & (!IEMobile)]]></if>
+            </action> -->
+
+            <!-- JS Libraries -->
+            <action method="addItem">
+				<type>skin_js</type>
+				<name>js/jquery-ui-1.11.0.custom.js</name>
+			</action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/jquery.cookie.js</name>
+            </action>
+            <!-- https://github.com/louisremi/jquery-smartresize -->
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/jquery.debouncedresize.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/jquery.throttledresize.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/jqmodal.js</name>
+            </action>
+            <action method="removeItem"><type>skin_js</type><name>js/lib/jquery.cycle2.min.js</name></action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/jquery.cycle2.js</name>
+            </action>
+            <action method="removeItem"><type>skin_js</type><name>js/lib/jquery.cycle2.swipe.min.js</name></action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/jquery.cycle2.swipe.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/owl.carousel.js</name>
+            </action>
+
+            <!-- JS Custom -->
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/icube.helper.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/icube.store.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/icube.responsive.js</name>
+            </action>
+            <action method="removeItem"><type>skin_js</type><name>js/slideshow.js</name></action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/jquery.icube.bannerenhanced.js</name>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/jquery.main.js</name>
+            </action>
+			<action method="addItem">
+				<type>skin_js</type>
+				<name>js/main.js</name>
+			</action>
+		</reference>
+
+        <!-- To add block after the body tag add it here. -->
+        <reference name="after_body_start">
+        </reference>
+        <!-- To add block before end of body tag add it here. -->
+        <reference name="before_body_end">
+        </reference>
+
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/1column.phtml</template>
+            </action>
+        </reference>
+
+        <reference name="header">
+        </reference>
+
+        <reference name="footer">
+        </reference>
+		
+	</default>
+
+    <!-- Home -->
+    <cms_index_index>
+    </cms_index_index>
+
+    <!-- Category -->
+    <catalog_category_default>
+    </catalog_category_default>
+
+    <!-- Category Layered -->
+    <catalog_category_layered>
+    </catalog_category_layered>
+
+    <!-- Search -->
+    <catalogsearch_result_index>
+    </catalogsearch_result_index>
+
+    <!-- Product -->
+    <catalog_product_view>
+    </catalog_product_view>
+
+    <!-- Customer Account -->
+    <customer_account>
+    </customer_account>
+    
+    <!-- Checkout -->
+    <checkout_onepage_index>
+    </checkout_onepage_index>
+    
+    <!-- Order Confirmation -->
+    <checkout_onepage_success>
+    </checkout_onepage_success>
+
+</layout>
